@@ -1,0 +1,14 @@
+.select-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+  :global(.MuiInputBase-root) {
+    padding: 0 65px 0 15px !important;
+    font-size: var(--general-font-size);
+    :global(.MuiInputBase-input) {
+      padding: 10px 0 !important;
+      height: 16px;
+    }
+  }
+}

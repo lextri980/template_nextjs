@@ -1,0 +1,27 @@
+.collapse-container {
+  width: 100%;
+  :global(.MuiPaper-root) {
+    box-shadow: none;
+    border: 1px solid var(--input-border-primary);
+    h3 {
+      font-size: 16px;
+      font-weight: 500;
+      :global(.MuiButtonBase-root) {
+        border-bottom: 1px solid var(--input-border-primary);
+        min-height: 48px;
+        transition: 0.2s border-bottom ease-in-out;
+        :global(.MuiAccordionSummary-content) {
+          margin: 0;
+        }
+      }
+    }
+    :global(.MuiAccordionDetails-root) {
+      padding: 16px;
+    }
+    &:global(:not(.Mui-expanded)) {
+      :global(.MuiButtonBase-root) {
+        border-bottom-color: transparent;
+      }
+    }
+  }
+}

@@ -14,6 +14,12 @@
           display: none;
         }
       }
+      :global(.MuiTypography-root) {
+        font-size: 15px;
+      }
+      &.radio-error {
+        color: var(--error-primary);
+      }
     }
   }
 }
