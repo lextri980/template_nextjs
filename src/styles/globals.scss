@@ -1,10 +1,13 @@
-@use "tailwindcss";
-@use "./theme";
+@use 'tailwindcss';
+@use './mixin';
+@use './theme';
+@use './component';
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  @include mixin.scroll-page;
 }
 
 body {

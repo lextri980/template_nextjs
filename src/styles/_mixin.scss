@@ -1,0 +1,25 @@
+@mixin scroll-area {
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--scroll-thumb);
+    border-radius: 2px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: var(--scroll-background);
+    border-radius: 2px;
+  }
+}
+
+@mixin scroll-page {
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--scroll-thumb);
+  }
+  &::-webkit-scrollbar-track {
+    background-color: var(--scroll-background);
+  }
+}

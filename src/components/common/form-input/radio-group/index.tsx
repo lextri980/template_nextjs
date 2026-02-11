@@ -1,4 +1,4 @@
-import { Label } from '@/components';
+import { Label } from '@/components/common';
 import {
   FormControlLabel,
   RadioGroup as MuiRadioGroup,

@@ -1,3 +1,4 @@
+import { MuiThemeProvider } from '@/contexts';
 import { NextIntlClientProvider } from 'next-intl';
 import { Toaster as ToasterProvider } from 'sonner';
 
@@ -13,6 +14,7 @@ export function Providers({
 }): React.ReactNode {
   return (
     <NextIntlClientProvider>
+      <MuiThemeProvider>
         {children}
         <ToasterProvider
           className='toaster-provider'
@@ -21,6 +23,7 @@ export function Providers({
           mobileOffset={{ top: '10px', right: '10px' }}
           toastOptions={{ duration: 5000 }}
         />
+      </MuiThemeProvider>
     </NextIntlClientProvider>
   );
 }

@@ -1,4 +1,4 @@
-import Label from '@/components/label';
+import { Label } from '@/components/common';
 import MuiTextField from '@mui/material/TextField';
 import styles from './style.module.scss';
 import type { TTextFieldProps } from './type';
@@ -19,7 +19,7 @@ export default function TextField(props: TTextFieldProps) {
         type={type ?? 'text'}
         label=''
         error={!!error}
-        autoComplete="off"
+        autoComplete='off'
         slotProps={{
           ...slotProps,
           root: { className: styles['textfield-root'] },

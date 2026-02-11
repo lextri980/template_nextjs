@@ -1,4 +1,4 @@
-import Toaster from '@/components/toaster';
+import { Toaster } from '@/components/common';
 import { toast } from 'sonner';
 
 /**
