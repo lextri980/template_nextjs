@@ -1,6 +1,6 @@
 import clsx from 'clsx';
+import type { TRadioCheckIconProps } from './definition';
 import styles from './style.module.scss';
-import type { TRadioCheckIconProps } from './type';
 
 export default function RadioCheckIcon(props: TRadioCheckIconProps) {
   const { checked, disabled } = props;

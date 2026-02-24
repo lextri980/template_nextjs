@@ -6,9 +6,25 @@
   :global(.MuiInputBase-root) {
     padding: 0 65px 0 15px !important;
     font-size: var(--general-font-size);
+    .end-adornment button {
+      transition: transform 0.3s ease;
+      .caret-icon {
+        width: 20px;
+        height: 20px;
+      }
+    }
     :global(.MuiInputBase-input) {
       padding: 10px 0 !important;
       height: 16px;
+    }
+    fieldset {
+      border: 1px solid var(--input-border-primary);
+    }
+    &:hover fieldset {
+      border: 1px solid var(--input-border-hover);
+    }
+    &:global(.Mui-focused .MuiOutlinedInput-notchedOutline) {
+      border: 1px solid var(--input-border-focus);
     }
   }
 }

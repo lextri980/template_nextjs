@@ -1,3 +1,5 @@
+@use '@/styles/mixin';
+
 .textfield-container {
   width: 100%;
   display: flex;
@@ -31,6 +33,17 @@
       &:hover fieldset {
         border: 1px solid var(--input-border-hover);
       }
+      &:global(.Mui-disabled) {
+        fieldset {
+          border: 1px solid var(--input-border-primary);
+        }
+      }
+    }
+    :global(.MuiInputBase-root:has(textarea)) {
+      padding: 0;
+      textarea {
+        @include mixin.scroll-area;
+      }
     }
     :global(.MuiInputBase-root.Mui-focused) {
       fieldset {
@@ -38,6 +51,9 @@
       }
     }
     :global(.MuiInputBase-root.Mui-error) {
+      input {
+        color: var(--error-primary);
+      }
       fieldset {
         border: 1px solid var(--error-primary);
       }

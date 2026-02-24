@@ -27,8 +27,6 @@ export type TRadioCollapseFormValues = {
   errorRadio: string | null;
 };
 
-// [Schema] Validation schema for form fields
-
 // [Const] Default values for the form fields
 export const DEFAULT_VALUES = {
   baseTextfield: '',

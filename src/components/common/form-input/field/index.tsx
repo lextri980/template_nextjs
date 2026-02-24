@@ -1,7 +1,7 @@
 import React from 'react';
 import type { FieldPath, FieldValues } from 'react-hook-form';
 import { Controller } from 'react-hook-form';
-import { TFieldProps } from './type';
+import { TFieldProps } from './definition';
 
 export default function Field<
   TFieldValues extends FieldValues = FieldValues,

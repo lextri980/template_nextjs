@@ -1,6 +1,6 @@
 import type { TextFieldProps } from '@mui/material/TextField';
 import type { FieldPath, FieldValues } from 'react-hook-form';
-import type { TFieldState } from '../field/type';
+import type { TFieldState } from '../field/definition';
 
 // [Type] TextField Component Props
 export type TTextFieldProps<

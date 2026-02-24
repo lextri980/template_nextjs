@@ -1,15 +1,13 @@
 'use client';
-import { Field, RadioGroup, TextField } from '@/components/common';
+import { Field, TextField } from '@/components/common';
 import { useToast } from '@/hooks';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Button } from '@mui/material';
 import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
-import { LOGIN_FORM_DVALUES } from './constant';
-import { loginSchema } from './schema';
+import { LOGIN_FORM_DVALUES, loginSchema, TLoginForm } from './definition';
 import styles from './style.module.scss';
-import { TLoginForm } from './type';
 
 export default function Login() {
   // [Hook] Translation hook

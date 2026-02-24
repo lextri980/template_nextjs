@@ -1,7 +1,7 @@
 import { XClose } from '@untitledui/icons';
 import { toast as sonnerToast } from 'sonner';
+import { TToasterProps } from './defintion';
 import './style.scss';
-import { TToasterProps } from './type';
 
 export default function Toaster(props: TToasterProps) {
   // [Props] Destructuring props
