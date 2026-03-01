@@ -35,7 +35,7 @@
       }
       &:global(.Mui-disabled) {
         fieldset {
-          border: 1px solid var(--input-border-primary);
+          border: 1px solid var(--input-border-disabled);
         }
       }
     }

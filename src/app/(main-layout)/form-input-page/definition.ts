@@ -16,7 +16,8 @@ export type TTextfieldCollapseFormValues = {
 export type TSelectCollapseFormValues = {
   baseSelect: string | null;
   disabledSelect: string | null;
-  multipleSelect: string[];
+  errorSelect: string | null;
+  multiSelect: string[];
 };
 
 // [Type] Radio collapse form values

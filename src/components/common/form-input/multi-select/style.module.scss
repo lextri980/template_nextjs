@@ -7,6 +7,16 @@
     :global(.MuiInputBase-root) {
       padding: 0 65px 0 15px !important;
       font-size: var(--general-font-size);
+      flex-wrap: nowrap;
+      .value-tag {
+        background-color: var(--input-border-primary);
+        width: fit-content;
+        margin-right: 4px;
+        padding: 0 4px;
+        border-radius: 4px;
+        height: 22px;
+        white-space: nowrap;
+      }
       .end-adornment button {
         transition: transform 0.3s ease;
         .caret-icon {

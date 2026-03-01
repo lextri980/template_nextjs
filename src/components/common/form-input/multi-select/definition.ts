@@ -2,15 +2,16 @@ import { AutocompleteProps } from '@mui/material';
 import { ElementType } from 'react';
 import { FieldPath, FieldValues } from 'react-hook-form';
 import { TFieldState } from '../field/definition';
+import { TSelectOption } from '../select/definition';
 
-// [Type] Select component props
-export type TSelectProps<
+// [Type] MultiSelect component props
+export type TMultiSelectProps<
   TFieldValues extends FieldValues = FieldValues,
   TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
   FreeSolo extends boolean = false,
   ChipComponent extends ElementType = ElementType,
 > = Omit<
-  AutocompleteProps<TSelectOption, false, false, FreeSolo, ChipComponent>,
+  AutocompleteProps<TSelectOption, true, false, FreeSolo, ChipComponent>,
   'renderInput' | 'options' | 'disableClearable'
 > &
   TFieldState<TFieldValues, TName> & {
@@ -27,11 +28,3 @@ export type TSelectProps<
     // Error message
     error?: string;
   };
-
-// [Type] select options
-export type TSelectOption = {
-  // Main value of the select
-  id: string | number;
-  // Display label for the option
-  label: string;
-};
