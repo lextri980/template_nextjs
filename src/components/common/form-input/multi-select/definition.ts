@@ -15,16 +15,20 @@ export type TMultiSelectProps<
   'renderInput' | 'options' | 'disableClearable'
 > &
   TFieldState<TFieldValues, TName> & {
-    // Options for the select field
+    /** Options for the select field */
     options: TSelectOption[];
-    // Label for the select field
+    /** Label for the select field */
     label?: string;
-    // Whether the field is required
+    /** Whether the field is required */
     required?: boolean;
-    // Placeholder text for the select input
+    /** Placeholder text for the select input */
     placeholder?: string;
-    // Whether to hide the clear icon in the select input
+    /** Whether to hide the clear icon in the select input */
     hideClearIcon?: boolean;
-    // Error message
+    /** Error message */
     error?: string;
+    /** Maximum width for the tags displayed in the select input */
+    tagMaxWidth?: string;
+    /** Maximum number of tags to display before collapsing */
+    tagLimit?: number;
   };

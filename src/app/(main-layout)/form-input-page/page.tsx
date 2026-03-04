@@ -1,6 +1,11 @@
 'use client';
 import { useForm } from 'react-hook-form';
-import { RadioCollapse, SelectCollapse, TextfieldCollapse } from './components';
+import {
+  NumberFieldCollapse,
+  RadioCollapse,
+  SelectCollapse,
+  TextfieldCollapse,
+} from './components';
 import { DEFAULT_VALUES, TFormInput } from './definition';
 import styles from './style.module.scss';
 
@@ -15,6 +20,7 @@ export default function FormInputPage() {
       <p className={styles['page-title']}>Form Input</p>
       <div className={styles['form-section']}>
         <TextfieldCollapse control={control} />
+        <NumberFieldCollapse control={control} />
         <SelectCollapse control={control} />
         <RadioCollapse control={control} />
       </div>

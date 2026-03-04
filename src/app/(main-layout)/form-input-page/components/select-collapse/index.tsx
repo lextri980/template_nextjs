@@ -9,7 +9,7 @@ export default function SelectCollapse(props: TSelectCollapseProps) {
   //! [JSX Section]
   return (
     <div className={styles['select-container']}>
-      <Collapse title='SELECT' defaultExpanded>
+      <Collapse title='SELECT'>
         <div className='cols-3'>
           <Field control={control} label='Base Select' name='baseSelect'>
             <Select options={BASE_SELECT_OPTIONS} placeholder='Choose option' />
@@ -40,6 +40,27 @@ export default function SelectCollapse(props: TSelectCollapseProps) {
             <MultiSelect
               options={BASE_SELECT_OPTIONS}
               placeholder='Choose options'
+            />
+          </Field>
+          <Field
+            control={control}
+            label='Disabled Multi-Select'
+            name='disabledMultiSelect'>
+            <MultiSelect
+              options={BASE_SELECT_OPTIONS}
+              placeholder='Choose options'
+              disabled
+            />
+          </Field>
+          <Field
+            control={control}
+            label='Error Multi-Select'
+            name='errorMultiSelect'
+            required>
+            <MultiSelect
+              options={BASE_SELECT_OPTIONS}
+              placeholder='Choose options'
+              error='This field is requried'
             />
           </Field>
         </div>

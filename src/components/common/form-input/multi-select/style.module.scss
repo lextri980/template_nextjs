@@ -5,17 +5,48 @@
   width: 100%;
   :global(.MuiAutocomplete-root) {
     :global(.MuiInputBase-root) {
-      padding: 0 65px 0 15px !important;
+      padding: 7px 65px 7px 15px !important;
       font-size: var(--general-font-size);
+      gap: 4px;
       flex-wrap: nowrap;
-      .value-tag {
+      .tag-value {
         background-color: var(--input-border-primary);
         width: fit-content;
-        margin-right: 4px;
         padding: 0 4px;
         border-radius: 4px;
         height: 22px;
+        flex-shrink: 0;
         white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-family: var(--font-montserrat);
+        font-size: 14px;
+        &.tag-value-error {
+          background-color: var(--color-error);
+          color: var(--absolute-white);
+        }
+      }
+      .shortcut-tag {
+        margin: 0 !important;
+        .tag-text {
+          display: inline-flex;
+          border: 1px solid var(--input-border-primary);
+          border-radius: 4px;
+          height: 22px;
+          padding: 0 4px;
+          font-family: var(--font-montserrat);
+          font-size: 14px;
+        }
+        &.shortcut-tag-error {
+          .tag-text {
+            border: 1px solid var(--color-error);
+            color: var(--color-error);
+          }
+        }
+      }
+      .input-search {
+        padding: 3px 0 !important;
+        height: 16px;
       }
       .end-adornment button {
         transition: transform 0.3s ease;
@@ -23,10 +54,6 @@
           width: 20px;
           height: 20px;
         }
-      }
-      input {
-        padding: 10px 0 !important;
-        height: 16px;
       }
       fieldset {
         border: 1px solid var(--input-border-primary);
@@ -50,6 +77,11 @@
         fieldset {
           border: 1px solid var(--error-primary);
         }
+      }
+    }
+    &:global(.Mui-focused) {
+      :global(.MuiInputBase-root) {
+        flex-wrap: wrap;
       }
     }
   }
