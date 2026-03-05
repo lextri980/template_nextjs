@@ -1,0 +1,26 @@
+.checkbox-check-icon-container {
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--radio-border);
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &.checked {
+    border: 1px solid var(--radio-checkpoint);
+    background-color: var(--radio-checkpoint);
+    &.disabled {
+      background-color: var(--radio-checkpoint-50);
+      border-color: var(--radio-border-disabled);
+    }
+  }
+  &.disabled {
+    border-color: var(--radio-border-disabled);
+  }
+  .check-icon {
+    width: 10px;
+    height: 10px;
+    color: var(--absolute-white);
+  }
+}

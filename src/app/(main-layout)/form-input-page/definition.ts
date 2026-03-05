@@ -1,10 +1,15 @@
-// [Type] Combined form values type
+/**
+ * [Type] Combined form values type
+ */
 export type TFormInput = TTextfieldCollapseFormValues &
   TNumberFieldCollapseFormValues &
   TSelectCollapseFormValues &
-  TRadioCollapseFormValues;
+  TRadioCollapseFormValues &
+  TCheckboxCollapseFormValues;
 
-// [Type] Textfield collapse form values
+/**
+ * [Type] Textfield collapse form values
+ */
 export type TTextfieldCollapseFormValues = {
   baseTextfield: string;
   passwordTextfield: string;
@@ -13,12 +18,19 @@ export type TTextfieldCollapseFormValues = {
   textarea: string;
 };
 
-// [Type] Number field collapse form values
+/**
+ * [Type] Number field collapse form values
+ */
 export type TNumberFieldCollapseFormValues = {
   baseNumberField: string;
+  baseSeparatorNumberField: string;
+  disabledNumberField: string;
+  errorNumberField: string;
 };
 
-// [Type] Select collapse form values
+/**
+ * [Type] Select collapse form values
+ */
 export type TSelectCollapseFormValues = {
   baseSelect: string | null;
   disabledSelect: string | null;
@@ -28,7 +40,9 @@ export type TSelectCollapseFormValues = {
   errorMultiSelect: string[];
 };
 
-// [Type] Radio collapse form values
+/**
+ * [Type] Radio collapse form values
+ */
 export type TRadioCollapseFormValues = {
   baseRadio: string | null;
   disabledRadio: string | null;
@@ -36,7 +50,19 @@ export type TRadioCollapseFormValues = {
   errorRadio: string | null;
 };
 
-// [Const] Default values for the form fields
+/**
+ * [Type] Checkbox collapse form values
+ */
+export type TCheckboxCollapseFormValues = {
+  baseCheckbox: string[];
+  disabledCheckbox: string[];
+  disabledOptionCheckbox: string[];
+  errorCheckbox: string[];
+};
+
+/**
+ * [Const] Default values for the form inputs
+ */
 export const DEFAULT_VALUES = {
   /** Textfield */
   baseTextfield: '',
@@ -45,7 +71,10 @@ export const DEFAULT_VALUES = {
   errorTextfield: 'This is error field',
   textarea: 'This is textarea field',
   /** Number field */
-  baseNumberField: '',
+  baseNumberField: '123456789',
+  baseSeparatorNumberField: '123456789.99',
+  disabledNumberField: '123456789.99',
+  errorNumberField: '123456789',
   /** Select */
   baseSelect: null,
   disabledSelect: null,
@@ -58,5 +87,9 @@ export const DEFAULT_VALUES = {
   disabledRadio: 'male',
   disabledOptionsRadio: 'male',
   errorRadio: null,
+  /** Checkbox */
+  baseCheckbox: [],
+  disabledCheckbox: [],
+  disabledOptionCheckbox: [],
+  errorCheckbox: [],
 };
-

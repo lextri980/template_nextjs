@@ -1,5 +1,6 @@
 export { default as Button } from './button';
 export { default as Collapse } from './collapse';
+export { default as Checkbox } from './form-input/checkbox';
 export { default as Field } from './form-input/field';
 export { default as MultiSelect } from './form-input/multi-select';
 export { default as NumberField } from './form-input/number-field';
