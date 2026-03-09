@@ -5,7 +5,8 @@ export type TFormInput = TTextfieldCollapseFormValues &
   TNumberFieldCollapseFormValues &
   TSelectCollapseFormValues &
   TRadioCollapseFormValues &
-  TCheckboxCollapseFormValues;
+  TCheckboxCollapseFormValues &
+  TDatePickerCollapseFormValues;
 
 /**
  * [Type] Textfield collapse form values
@@ -61,6 +62,16 @@ export type TCheckboxCollapseFormValues = {
 };
 
 /**
+ * [Type] DatePicker collapse form values
+ */
+export type TDatePickerCollapseFormValues = {
+  baseDatePicker: Date | null;
+  multiDatePicker: Date[] | null;
+  disabledDatePicker: Date | null;
+  errorDatePicker: Date | null;
+};
+
+/**
  * [Const] Default values for the form inputs
  */
 export const DEFAULT_VALUES = {
@@ -92,4 +103,9 @@ export const DEFAULT_VALUES = {
   disabledCheckbox: [],
   disabledOptionCheckbox: [],
   errorCheckbox: [],
+  /** DatePicker */
+  baseDatePicker: null,
+  multiDatePicker: null,
+  disabledDatePicker: null,
+  errorDatePicker: null,
 };

@@ -2,6 +2,7 @@
 import { useForm } from 'react-hook-form';
 import {
   CheckboxCollapse,
+  DatePickerCollapse,
   NumberFieldCollapse,
   RadioCollapse,
   SelectCollapse,
@@ -31,6 +32,7 @@ export default function FormInputPage() {
         <SelectCollapse control={control} />
         <RadioCollapse control={control} />
         <CheckboxCollapse control={control} />
+        <DatePickerCollapse control={control} />
       </div>
     </div>
   );
