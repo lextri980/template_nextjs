@@ -3,13 +3,18 @@
   --general-font-size: 15px;
   --background: #ffffff;
   --foreground: #171717;
-  // Variant
+  // Main variant
   --color-primary: #09637e;
   --color-secondary: #088395;
   --color-info: #758a93;
   --color-success: #06923e;
   --color-warning: #ff7d29;
-  --color-error: #ef4b4b;
+  --color-error: #d32f2f;
+  --color-light: #ffffff;
+  --color-dark: #000000;
+  // Main variant with lower opacity
+  --color-primary-50: #09637e80;
+  // Immutable colors
   --absolute-white: #ffffff;
   --absolute-black: #000000;
   // Shadow
@@ -20,6 +25,7 @@
   // Text
   --text-disabled: #a9a9a9;
   // Input
+  --input-placeholder: #1717176b;
   --input-border-primary: #0000003b;
   --input-border-hover: #8f8f8f;
   --input-border-focus: #646464;
@@ -44,4 +50,3 @@
 //     --error-primary: #d32f2f;
 //   }
 // }
-

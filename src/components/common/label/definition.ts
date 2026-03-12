@@ -1,11 +1,15 @@
-// [Type] Label Component Props
+/**
+ * [Type] Label component props
+ */
 export type TLabelProps = {
-  // Whether the label is required
-  required?: boolean;
-  // Whether the label is disabled
+  /** Custom class for the label component */
+  className?: string;
+  /** Whether the label is disabled */
   disabled?: boolean;
-  // Error message for the label
+  /** Error message for the label */
   error?: string;
-  // Children for the Label Component
+  /** Whether the label is required */
+  required?: boolean;
+  /** [Slot] Children for the Label Component */
   children: React.ReactNode | string;
 };

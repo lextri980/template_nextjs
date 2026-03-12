@@ -4,11 +4,17 @@ import styles from './style.module.scss';
 
 export default function Label(props: TLabelProps) {
   // [Props] Destructuring props
-  const { required = false, disabled = false, error, children } = props;
+  const {
+    disabled = false,
+    error,
+    className,
+    required = false,
+    children,
+  } = props;
 
   //! [JSX Section]
   return (
-    <div className={styles['label-container']}>
+    <div className={clsx(styles['label-container'], className)}>
       <span
         className={clsx(styles['label-text'], {
           [styles['label-text-error']]: error,

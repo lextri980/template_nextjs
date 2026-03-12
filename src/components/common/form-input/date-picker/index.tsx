@@ -1,8 +1,18 @@
 'use client';
-import { Label } from '@/components/common';
-import { DATE_FORMATS } from '@/utils/date.util';
+import { Label, Tooltip } from '@/components/common';
+import { DateUtil } from '@/utils';
+import { TDateFormat } from '@/utils/date.util';
+import {
+  ChevronLeft,
+  ChevronLeftDouble,
+  ChevronRight,
+  ChevronRightDouble,
+} from '@untitledui/icons';
 import clsx from 'clsx';
-import { DatePicker as ReactDatePicker } from 'react-datepicker';
+import {
+  DatePicker as ReactDatePicker,
+  ReactDatePickerCustomHeaderProps,
+} from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import type { TDatePickerProps } from './definition';
 import styles from './style.module.scss';
@@ -10,52 +20,102 @@ import styles from './style.module.scss';
 export default function DatePicker(props: TDatePickerProps) {
   // [Props] Destructuring props
   const {
-    label,
     disabled,
     error,
-    required,
+    format = DateUtil.DATE_FORMATS.DATE_ONLY,
+    label,
+    multiple = false,
     placeholder = 'Select date',
-    selectsMultiple = false,
-    format = DATE_FORMATS.DATE_ONLY,
-    formatMultipleDates, // This must be undefined when selectsMultiple is false
+    required,
+    formatMultipleDates,
+    /** Field & Rest */
     field,
     ...rest
   } = props;
 
   /**
    * [Func] Handle date change
-   * @param date - An individual date or an array of dates depending on the selectsMultiple prop
-   * If selectsMultiple is true, date will be an array of Date objects. Otherwise, it will be a single Date object or null.
+   * @param date - An individual date or an array of dates depending on the multiple prop
+   * If multiple is true, date will be an array of Date objects. Otherwise, it will be a single Date object or null.
    */
   const handleChange = (date: Date | Date[] | null) => {
-    if (selectsMultiple && Array.isArray(date)) {
-      field?.onChange(date ?? null);
-    } else {
-      field?.onChange(date ?? null);
+    field?.onChange(date ?? null);
+  };
+
+  /**
+   * [Render] Tooltip content for multiple selected dates
+   * @returns A string representing the formatted selected dates for display in the tooltip when multiple selection is enabled
+   */
+  const renderTooltipMultipleDates = () => {
+    if (
+      !field?.value ||
+      !Array.isArray(field.value) ||
+      field.value.length === 0
+    ) {
+      return '';
     }
+    return field.value
+      .map((date: Date) =>
+        DateUtil.format(
+          date,
+          (format ?? DateUtil.DATE_FORMATS.DATE_ONLY) as TDateFormat
+        )
+      )
+      .join(', ');
+  };
+
+  /**
+   * [Render] Custom header for the date picker to include month and year navigation controls
+   * @param headerProps - Header props of react date picker
+   * @returns JSX element representing the custom header for the date picker
+   */
+  const renderHeader = (headerProps: ReactDatePickerCustomHeaderProps) => {
+    return (
+      <div className={styles['header-wrapper']}>
+        <span className={styles['chevron-icon']}>
+          <ChevronLeftDouble onClick={() => headerProps.decreaseYear()} />
+          <ChevronLeft onClick={() => headerProps.decreaseMonth()} />
+        </span>
+        <span className={styles['header-date-value']}>
+          {DateUtil.getMonth(headerProps.monthDate)}&nbsp;/&nbsp;
+          {DateUtil.getYear(headerProps.monthDate)}
+        </span>
+        <span className={styles['chevron-icon']}>
+          <ChevronRight onClick={() => headerProps.increaseMonth()} />
+          <ChevronRightDouble onClick={() => headerProps.increaseYear()} />
+        </span>
+      </div>
+    );
   };
 
   //! [JSX Section]
   return (
     <div className={styles['date-picker-container']}>
-      <Label disabled={disabled} error={error} required={required}>
+      <Label
+        disabled={disabled}
+        error={error}
+        required={required}
+        className={styles['date-picker-label']}>
         {label}
       </Label>
-      {selectsMultiple ? (
-        <ReactDatePicker
-          {...rest}
-          {...field}
-          selectedDates={field?.value ?? null}
-          onChange={handleChange}
-          disabled={disabled}
-          placeholderText={placeholder}
-          dateFormat={format}
-          className={clsx({ error: !!error })}
-          selectsRange={false}
-          selectsMultiple={true}
-          shouldCloseOnSelect={false}
-          formatMultipleDates={formatMultipleDates}
-        />
+      {multiple ? (
+        <Tooltip title={renderTooltipMultipleDates()} placement='top'>
+          <ReactDatePicker
+            {...rest}
+            {...field}
+            selectedDates={field?.value ?? null}
+            onChange={handleChange}
+            disabled={disabled}
+            placeholderText={placeholder}
+            dateFormat={format}
+            className={clsx({ error: !!error })}
+            selectsRange={false}
+            selectsMultiple={true}
+            shouldCloseOnSelect={false}
+            formatMultipleDates={formatMultipleDates}
+            renderCustomHeader={renderHeader}
+          />
+        </Tooltip>
       ) : (
         <ReactDatePicker
           {...rest}
@@ -68,9 +128,10 @@ export default function DatePicker(props: TDatePickerProps) {
           className={clsx({ error: !!error })}
           selectsRange={false}
           selectsMultiple={false}
+          renderCustomHeader={renderHeader}
         />
       )}
-      {error && <small className='error-text'>{error}</small>}
+      {error && <small className='error-text mt-1'>{error}</small>}
     </div>
   );
 }

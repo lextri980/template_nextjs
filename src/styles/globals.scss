@@ -4,8 +4,6 @@
 @use './component';
 
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
   @include mixin.scroll-page;
 }

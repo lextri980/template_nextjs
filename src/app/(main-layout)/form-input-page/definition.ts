@@ -67,6 +67,7 @@ export type TCheckboxCollapseFormValues = {
 export type TDatePickerCollapseFormValues = {
   baseDatePicker: Date | null;
   multiDatePicker: Date[] | null;
+  rangeDatePicker: [Date | null, Date | null] | null;
   disabledDatePicker: Date | null;
   errorDatePicker: Date | null;
 };
@@ -106,6 +107,7 @@ export const DEFAULT_VALUES = {
   /** DatePicker */
   baseDatePicker: null,
   multiDatePicker: null,
+  rangeDatePicker: null,
   disabledDatePicker: null,
   errorDatePicker: null,
 };

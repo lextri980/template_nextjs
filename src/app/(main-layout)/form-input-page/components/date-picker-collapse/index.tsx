@@ -22,7 +22,13 @@ export default function DatePickerCollapse(props: TDatePickerCollapseProps) {
             control={control}
             name='multiDatePicker'
             label='Multi DatePicker'>
-            <DatePicker placeholder='Select date' selectsMultiple />
+            <DatePicker placeholder='Select date' multiple />
+          </Field>
+          <Field
+            control={control}
+            name='rangeDatePicker'
+            label='Range DatePicker'>
+            <DatePicker placeholder='Select date' />
           </Field>
           <Field
             control={control}

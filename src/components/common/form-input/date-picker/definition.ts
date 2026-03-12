@@ -8,18 +8,20 @@ import type { TFieldState } from '../field/definition';
 export type TDatePickerProps<
   TFieldValues extends FieldValues = FieldValues,
   TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
-> = Omit<DatePickerProps, 'onChange' | 'selected'> &
+> = Omit<DatePickerProps, 'onChange' | 'selected' | 'selectsMultiple'> &
   TFieldState<TFieldValues, TName> & {
-    /** Date format string (e.g., 'dd/MM/yyyy') */
-    format?: string;
-    /** Placeholder text for the date picker input */
-    placeholder?: string;
-    /** Label for the date picker */
-    label?: string;
     /** Whether the date picker is disabled */
     disabled?: boolean;
     /** Error message for the date picker */
     error?: string;
+    /** Date format string (e.g., 'dd/MM/yyyy') */
+    format?: string;
+    /** Label for the date picker */
+    label?: string;
+    /** Whether the date picker allows selecting multiple dates */
+    multiple?: boolean;
+    /** Placeholder text for the date picker input */
+    placeholder?: string;
     /** Whether the date picker is required */
     required?: boolean;
   };
