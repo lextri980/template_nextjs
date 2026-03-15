@@ -1,5 +1,10 @@
 'use client';
-import { Collapse, DatePicker, Field } from '@/components/common';
+import {
+  Collapse,
+  DatePicker,
+  DateRangePicker,
+  Field,
+} from '@/components/common';
 import { TDatePickerCollapseProps } from './definition';
 import styles from './style.module.scss';
 
@@ -16,25 +21,25 @@ export default function DatePickerCollapse(props: TDatePickerCollapseProps) {
             control={control}
             name='baseDatePicker'
             label='Base DatePicker'>
-            <DatePicker placeholder='Select date' />
+            <DatePicker placeholderText='Select date' />
           </Field>
           <Field
             control={control}
             name='multiDatePicker'
             label='Multi DatePicker'>
-            <DatePicker placeholder='Select date' multiple />
+            <DatePicker placeholderText='Select date' multiple />
           </Field>
           <Field
             control={control}
             name='rangeDatePicker'
             label='Range DatePicker'>
-            <DatePicker placeholder='Select date' />
+            <DateRangePicker placeholderText='Select range' />
           </Field>
           <Field
             control={control}
             name='disabledDatePicker'
             label='Disabled DatePicker'>
-            <DatePicker placeholder='Select date' disabled />
+            <DatePicker placeholderText='Select date' disabled />
           </Field>
           <Field
             control={control}
@@ -42,7 +47,7 @@ export default function DatePickerCollapse(props: TDatePickerCollapseProps) {
             label='Error DatePicker'
             required>
             <DatePicker
-              placeholder='Select date'
+              placeholderText='Select date'
               error='This field is required'
             />
           </Field>

@@ -28,7 +28,6 @@ export default function DatePicker(props: TDatePickerProps) {
     placeholder = 'Select date',
     required,
     formatMultipleDates,
-    /** Field & Rest */
     field,
     ...rest
   } = props;
@@ -108,12 +107,14 @@ export default function DatePicker(props: TDatePickerProps) {
             disabled={disabled}
             placeholderText={placeholder}
             dateFormat={format}
-            className={clsx({ error: !!error })}
+            className={clsx({ [styles.error]: !!error })}
             selectsRange={false}
             selectsMultiple={true}
             shouldCloseOnSelect={false}
+            calendarStartDay={1}
             formatMultipleDates={formatMultipleDates}
             renderCustomHeader={renderHeader}
+            isClearable
           />
         </Tooltip>
       ) : (
@@ -125,10 +126,12 @@ export default function DatePicker(props: TDatePickerProps) {
           disabled={disabled}
           placeholderText={placeholder}
           dateFormat={format}
-          className={clsx({ error: !!error })}
+          className={clsx({ [styles.error]: !!error })}
           selectsRange={false}
           selectsMultiple={false}
+          calendarStartDay={1}
           renderCustomHeader={renderHeader}
+          isClearable
         />
       )}
       {error && <small className='error-text mt-1'>{error}</small>}

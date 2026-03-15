@@ -24,4 +24,9 @@ export type TDatePickerProps<
     placeholder?: string;
     /** Whether the date picker is required */
     required?: boolean;
+    /** [Event] Format multiple selected dates */
+    formatMultipleDates?: (
+      dates: Date[],
+      formatDate: (date: Date) => string
+    ) => string;
   };
