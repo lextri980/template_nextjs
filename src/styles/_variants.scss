@@ -1,0 +1,17 @@
+:root {
+  /* ------------------------ [MODE] Light ------------------------ */
+  &[data-mode='light'] {
+    --background: #faf5f1;
+    --foreground: #151b23;
+    --color-light: #ffffff;
+    --color-dark: #000000;
+  }
+
+  /* ------------------------ [MODE] Dark ------------------------ */
+  &[data-mode='dark'] {
+    --background: #151b23;
+    --foreground: #faf5f1;
+    --color-light: #000000;
+    --color-dark: #ffffff;
+  }
+}

@@ -1,0 +1,10 @@
+#!/bin/sh
+# cd ./client // Must cd if husky folder is not placed in root git folder
+echo "🔍 Running lint-staged..."
+pnpm lint-staged
+if [ $? -ne 0 ]; then
+  echo "❌ Linting failed. Commit aborted."
+  exit 1
+fi
+
+echo "✅ All checks passed!"

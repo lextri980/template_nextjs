@@ -1,43 +1,105 @@
-# <img src="./vercel.svg" alt="My Skills" width="30" /> Next.js Template
+# <img src="./public/svg/vercel.svg" alt="My Skills" width="30" /> Next.js Template (SA Version)
 
 [Next.js App router](https://nextjs.org/) boilerplate for a typical project
 
-## ⭕ Versions and Branches
+## 📦 Tech Stack
 
-
-### 💥 [TQ Version]
-
-- **Developing version: 1.0 | [dev/tq-version-1.0](https://github.com/lextri980/nextjs-template/tree/dev/tq-version-1.0)**
-- **Beta version: 1.0 | [beta/tq-version](https://github.com/lextri980/nextjs-template/tree/beta/tq-version)**
-- **Stable version: 1.0 | [tq-version](https://github.com/lextri980/nextjs-template/tree/tq-version)**
-
->**📦 Tech Stack**
-
-- **Core:** [`NextJS (16.1.6)`](https://nextjs.org/) [`ReactJS (19)`](https://reactjs.org/) [`TypeScript (5)`](https://www.typescriptlang.org/)
-- **UI/UX:** [`Tailwind CSS (4)`](https://tailwindcss.com/) [`Material UI (7)`](https://mui.com/) [`Sonner toast (2)`](https://sonner.emilkowal.ski/)
-- **Form:** [`React hook form (7)`](https://www.react-hook-form.com/) [`Zod (4)`](https://zod.dev/)
+- **Core:** [`NextJS (16.2.9)`](https://nextjs.org/) [`ReactJS (19.2.4)`](https://reactjs.org/) [`TypeScript (5)`](https://www.typescriptlang.org/)
+- **UI/UX:** [`Tailwind CSS (4)`](https://tailwindcss.com/) [`Hero UI (3.1)`](https://heroui.com/en/docs/react/getting-started) [`Sonner toast (2.0.7)`](https://sonner.emilkowal.ski/)
+- **Form:** [`React hook form (7.78)`](https://www.react-hook-form.com/) [`Zod (4.4.3)`](https://zod.dev/)
 - **Global state:** [`Zustand (2)`](https://zustand-demo.pmnd.rs/)
-- **API handler:** [`Tanstack Query (5)`](https://tanstack.com/query/latest)
+- **API handler:** [`Tanstack Query (5.0.14)`](https://tanstack.com/query/latest)
 
----
+## 💥 Develop version
 
-### 💥 [SA Version]
+<table>
+  <tr>
+    <th>No.</th>
+    <th>Version</th>
+    <th>Branch</th>
+  </tr>
+  <tr style="text-align: center">
+    <td>1</td>
+    <td>1.0</td>
+    <td>
+      <a href="https://github.com/lextri980/nextjs-template/tree/dev/version-1.0">
+        dev/tq-version-1.0
+      </a>
+    </td>
+  </tr>
+</table>
 
-- **Developing version: 3.0 | [dev/sa-version-3.1](https://github.com/lextri980/nextjs-template/tree/dev/sa-version-3.1)**
-- **Beta version: 3.0 | [beta/sa-version](https://github.com/lextri980/nextjs-template/tree/beta/sa-version)**
-- **Stable version: 2.1 | [sa-version](https://github.com/lextri980/nextjs-template/tree/sa-version)**
+## ⚙️ Getting Started
 
->**📦 Tech Stack**
+```bash
+# Clone and change directory to project
+git clone https://github.com/lextri980/nextjs-template.git
+cd nextjs-template
 
-- **Core:** [`NextJS (15.3.3)`](https://nextjs.org/) [`ReactJS (19)`](https://reactjs.org/) [`TypeScript (5)`](https://www.typescriptlang.org/)
-- **UI/UX:** [`Tailwind CSS (4)`](https://tailwindcss.com/) [`Material UI (7)`](https://mui.com/) [`Sonner toast (2)`](https://sonner.emilkowal.ski/)
-- **Form:** [`React hook form (7)`](https://www.react-hook-form.com/) [`Zod (4)`](https://zod.dev/)
-- **Global state:** [`Redux toolkit (2)`](https://redux-toolkit.js.org/)
-- **API handler:** [`Redux saga (1)`](https://redux-saga.js.org/)
+# Install dependencies
+pnpm install
 
----
+# Setup environment variables
+cp .env.example .env
+
+# Run the development server
+pnpm dev
+```
+
+Visit [http://localhost:4242](http://localhost:4242) in your browser.
+
+## 🛠️ Scripts
+
+| Command           | Description                       |
+| ----------------- | --------------------------------- |
+| `pnpm dev`        | Run in development mode           |
+| `pnpm build`      | Build for production              |
+| `pnpm start`      | Start production server           |
+| `pnpm lint`       | Run ESLint                        |
+| `pnpm format:all` | Run Prettier for all of the files |
+
+## 📁 Project Structure
+
+```
+.
+├── public/             # Public section
+│   ├── fonts/          # Local fonts
+│   ├── svg/            # SVG file type
+│   └── image/          # Other image file type (.png,.jpg,...)
+├── src/                # Application routes source
+│   ├── apis/           # API hooks using tanstack-query
+│   ├── app/            # Include pages router folder
+│   ├── components/     # Components
+│       ├── core/       # Atom components
+│       ├── layout/     # Components based on many atom components
+│   ├── configs/        # Configs
+│   ├── contexts/       # Contexts
+│   ├── hooks/          # Custom hooks
+│   ├── modules/        # Function module of each page
+│   ├── routers/        # Router constants
+│   ├── styles/         # Global & Specific styles
+│   └── utils/          # Utilities
+├── .env.example        # Environment variable example
+└── eslint.config.mjs   # Eslint config
+```
+
+## 📦 Deployment
+
+This project can be easily deployed to platforms like:
+
+- [Vercel](https://vercel.com/)
+- [Netlify](https://www.netlify.com/)
+- [Render](https://render.com/)
+
+```bash
+pnpm build
+pnpm start
+```
 
 ## 📄 License
 
 Author: [@lextri980](https://github.com/lextri980)
+
+---
+
 > Built with ❤️ using Next.js.
