@@ -1,0 +1,17 @@
+.label-container {
+  display: flex;
+  gap: 4px;
+  .label-text {
+    font-weight: 500;
+    cursor: default;
+  }
+  .label-text-disabled {
+    color: var(--text-disabled);
+  }
+  .label-text-error {
+    color: var(--error-primary);
+  }
+  .asterisk {
+    color: var(--error-primary);
+  }
+}

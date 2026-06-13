@@ -1,0 +1,15 @@
+@use 'tailwindcss';
+@use './mixin';
+@use './theme';
+@use './component';
+
+* {
+  box-sizing: border-box;
+  @include mixin.scroll-page;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-size: 15px;
+}

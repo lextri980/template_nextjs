@@ -1,0 +1,36 @@
+.toaster-provider {
+  background-color: red;
+  li {
+    border: none !important;
+    div {
+      width: 100%;
+      color: #fff !important;
+    }
+    .toaster-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 4px;
+      .message-wrapper {
+        text-align: justify;
+      }
+    }
+    .close-icon {
+      width: 16px;
+      height: 16px;
+      margin-top: 2px;
+      cursor: pointer;
+    }
+  }
+  .toast-success {
+    background-color: #06923e !important;
+  }
+  .toast-warning {
+    background-color: #ff7d29 !important;
+  }
+  .toast-error {
+    background-color: #ef4b4b !important;
+  }
+  .toast-info {
+    background-color: #03a6a1 !important;
+  }
+}

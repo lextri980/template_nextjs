@@ -1,0 +1,54 @@
+:root {
+  // General
+  --general-font-size: 15px;
+  --background: #ffffff;
+  --foreground: #171717;
+  // Main variant
+  --color-primary: #09637e;
+  --color-secondary: #088395;
+  --color-info: #758a93;
+  --color-success: #06923e;
+  --color-warning: #ff7d29;
+  --color-error: #d32f2f;
+  --color-light: #ffffff;
+  --color-dark: #000000;
+  // Main variant with lower opacity
+  --color-primary-50: #09637e80;
+  // Immutable colors
+  --absolute-white: #ffffff;
+  --absolute-black: #000000;
+  // Shadow
+  --shadow-primary: #a7a7a7;
+  // Scrollbar
+  --scroll-thumb: #b9b9b9;
+  --scroll-background: #e9e9e9;
+  // Text
+  --text-disabled: #a9a9a9;
+  // Input
+  --input-placeholder: #1717176b;
+  --input-placeholder-opacity: 0.42;
+  --input-border-primary: #0000003b;
+  --input-border-hover: #8f8f8f;
+  --input-border-focus: #646464;
+  --input-border-disabled: #d8d8d8;
+  --input-border-error: #d32f2f;
+  // Radio
+  --radio-checkpoint: #234c6a;
+  --radio-checkpoint-50: #234c6a80;
+  --radio-border: #646464;
+  --radio-border-disabled: #c4c4c4;
+  // Need update
+  --error-primary: #d32f2f;
+}
+
+// @media (prefers-color-scheme: dark) {
+//   :root {
+//     --background: #0a0a0a;
+//     --foreground: #ededed;
+//     --shadow-primary: #787878;
+//     --input-border-primary: #656565;
+//     --input-border-hover: #858585;
+//     --input-border-focus: #cdcdcd;
+//     --error-primary: #d32f2f;
+//   }
+// }

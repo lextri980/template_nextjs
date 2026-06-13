@@ -1,3 +1,1 @@
-import ApiService from "./api.service";
-
-export { ApiService };
+export { default as ApiService } from './api.service';

@@ -1,67 +1,56 @@
-"use client";
-import { Button, FormInput } from "@/components";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { DefaultValues, SubmitHandler, useForm } from "react-hook-form";
-import { schema } from "./schema";
-import { LoginContainer } from "./style";
-import { ILogin } from "./type";
+'use client';
+import { Field, TextField } from '@/components/common';
+import { useToast } from '@/hooks';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { Button } from '@mui/material';
+import { useTranslations } from 'next-intl';
+import { useRouter } from 'next/navigation';
+import { useForm } from 'react-hook-form';
+import { LOGIN_FORM_DVALUES, loginSchema, TLoginForm } from './definition';
+import styles from './style.module.scss';
 
 export default function Login() {
-  const defaultValues: DefaultValues<ILogin> = {
-    email: "",
-    password: "",
-    remember: false,
-  };
+  // [Hook] Translation hook
+  const t = useTranslations('auth');
+  const tMsg = useTranslations('message');
+  // [Hook] Route action hook
+  const router = useRouter();
+  // [Hook] Toaster hook
+  const toast = useToast();
 
+  // [Form] Login form hook
   const {
     control,
-    handleSubmit,
-    reset,
     formState: { errors },
-  } = useForm<ILogin>({
-    resolver: yupResolver(schema),
-    defaultValues,
+    handleSubmit,
+  } = useForm<TLoginForm>({
+    resolver: zodResolver(loginSchema(tMsg)),
+    defaultValues: LOGIN_FORM_DVALUES,
   });
 
-  const login: SubmitHandler<ILogin> = (value) => {
-    console.log(value);
-    reset();
+  /**
+   * Handle login form submit
+   * @param data - Login form data
+   */
+  const handleLogin = (data: TLoginForm) => {
+    router.push(`/login?username=${data.username}`);
+    toast.success('Login successfully');
   };
 
   return (
-    <LoginContainer>
-      <p className="text-3xl text-center mb-4">Login</p>
-      <div className="form-group flex flex-col gap-4 justify-center items-center">
-        <FormInput
-          control={control}
-          name="email"
-          label="Email"
-          placeholder="Email"
-          isInvalid={errors.email?.message ? true : false}
-          labelPlacement="outside"
-        />
-        <small className="text-red-500 align-self-start w-full">
-          {errors && errors.email?.message}
-        </small>
-        <FormInput
-          control={control}
-          type="password"
-          isVisible={false}
-          name="password"
-          label="Password"
-          placeholder="Password"
-          labelPlacement="outside"
-          isInvalid={errors.password?.message ? true : false}
-        />
-        <small className="text-red-500 align-self-start w-full">
-          {errors && errors.password?.message}
-        </small>
-        <div className="remember-me">
-          <FormInput control={control} type="checkbox" name="remember" />
-          <span>Remember me</span>
+    <div className={styles['login-container']}>
+      <div className={styles['login-form-wrapper']}>
+        <p className='text-3xl text-center mb-4'>{t('login')}</p>
+        <div className='flex flex-col gap-4 justify-center items-center'>
+          <Field control={control} name='username' label='Username' required>
+            <TextField error={errors?.username?.message} />
+          </Field>
+          <Field control={control} name='password' label='Password' required>
+            <TextField type='password' error={errors?.password?.message} />
+          </Field>
+          <Button onClick={handleSubmit(handleLogin)}>Login</Button>
         </div>
-        <Button onClick={handleSubmit(login)}>Login</Button>
       </div>
-    </LoginContainer>
+    </div>
   );
 }

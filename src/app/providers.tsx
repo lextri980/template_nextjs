@@ -1,6 +1,6 @@
-import { StyledComponentsRegistry } from "@/libs";
-import StoreProvider from "@/store/StoreProvider";
-import { NextUIProvider } from "@nextui-org/react";
+import { MuiThemeProvider } from '@/contexts';
+import { NextIntlClientProvider } from 'next-intl';
+import { Toaster as ToasterProvider } from 'sonner';
 
 /**
  * Providers component
@@ -13,10 +13,17 @@ export function Providers({
   children: React.ReactNode;
 }): React.ReactNode {
   return (
-    <StyledComponentsRegistry>
-      <StoreProvider>
-        <NextUIProvider>{children}</NextUIProvider>
-      </StoreProvider>
-    </StyledComponentsRegistry>
+    <NextIntlClientProvider>
+      <MuiThemeProvider>
+        {children}
+        <ToasterProvider
+          className='toaster-provider'
+          position='top-right'
+          offset={{ top: '24px', right: '24px' }}
+          mobileOffset={{ top: '10px', right: '10px' }}
+          toastOptions={{ duration: 5000 }}
+        />
+      </MuiThemeProvider>
+    </NextIntlClientProvider>
   );
 }

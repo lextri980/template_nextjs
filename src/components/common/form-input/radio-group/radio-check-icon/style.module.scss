@@ -1,0 +1,20 @@
+.radio-check-icon-container {
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--radio-border);
+  border-radius: 16px;
+  transition: all 0.2s ease-in-out;
+  &.checked {
+    border: 3px solid var(--absolute-white);
+    outline: 1px solid var(--radio-checkpoint);
+    background-color: var(--radio-checkpoint);
+    &.disabled {
+      border-color: var(--absolute-white);
+      background-color: var(--radio-checkpoint-50);
+      outline: 1px solid var(--radio-border-disabled);
+    }
+  }
+  &.disabled {
+    border-color: var(--radio-border-disabled);
+  }
+}

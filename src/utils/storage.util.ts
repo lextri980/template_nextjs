@@ -27,19 +27,19 @@ export default class StorageUtil {
    * @returns {string} Cookie item value
    */
   static getCookie(item: string): string {
-    const name = item + "=";
+    const name = item + '=';
     const decodedCookie = decodeURIComponent(document.cookie);
-    const splitedCookie = decodedCookie.split(";");
+    const splitedCookie = decodedCookie.split(';');
     for (let i = 0; i < splitedCookie.length; i++) {
       let cookie = splitedCookie[i];
-      while (cookie.charAt(0) == " ") {
+      while (cookie.charAt(0) == ' ') {
         cookie = cookie.substring(1);
       }
       if (cookie.indexOf(name) == 0) {
         return cookie.substring(name.length, cookie.length);
       }
     }
-    return "";
+    return '';
   }
 
   /**

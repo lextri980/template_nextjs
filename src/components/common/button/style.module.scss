@@ -1,0 +1,7 @@
+.button-container {
+  width: fit-content;
+  :global(.MuiButtonBase-root) {
+    text-transform: none;
+    font-size: 15px;
+  }
+}

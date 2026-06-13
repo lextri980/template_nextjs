@@ -1,0 +1,9 @@
+{
+  "common": {},
+  "message": {
+    "M001": "Field is required"
+  },
+  "auth": {
+    "login": "Login"
+  }
+}

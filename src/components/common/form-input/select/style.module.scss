@@ -1,0 +1,46 @@
+.select-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+  :global(.MuiAutocomplete-root) {
+    :global(.MuiInputBase-root) {
+      padding: 0 65px 0 15px !important;
+      font-size: var(--general-font-size);
+      .end-adornment button {
+        transition: transform 0.3s ease;
+        .caret-icon {
+          width: 20px;
+          height: 20px;
+        }
+      }
+      input {
+        padding: 10px 0 !important;
+        height: 16px;
+      }
+      fieldset {
+        border: 1px solid var(--input-border-primary);
+      }
+      &:hover fieldset {
+        border: 1px solid var(--input-border-hover);
+      }
+      &:global(.Mui-focused .MuiOutlinedInput-notchedOutline) {
+        border: 1px solid var(--input-border-focus);
+      }
+      &:global(.Mui-disabled) fieldset {
+        border: 1px solid var(--input-border-disabled);
+      }
+      &:global(.Mui-error) {
+        input:not(:placeholder-shown) {
+          color: var(--error-primary);
+        }
+        &:global(.Mui-focused .MuiOutlinedInput-notchedOutline) {
+          border: 1px solid var(--error-primary);
+        }
+        fieldset {
+          border: 1px solid var(--error-primary);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "common": {},
+  "message": {
+    "M001": "Không được để trống trường này"
+  },
+  "auth": {
+    "login": "Đăng nhập"
+  }
+}

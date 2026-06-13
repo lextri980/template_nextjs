@@ -1,5 +1,9 @@
-import { StorageUtil } from "@/utils";
-import axios, { AxiosError, AxiosInstance, AxiosResponse } from "axios";
+import { StorageUtil } from '@/utils';
+import axios, {
+  AxiosError,
+  type AxiosInstance,
+  type AxiosResponse,
+} from 'axios';
 
 // Declare type for API response
 type ApiResponse<T> = {
@@ -19,7 +23,7 @@ class ApiService {
 
   private constructor() {
     this.axiosInstance = axios.create({
-      baseURL: process.env.BASE_URL,
+      baseURL: process.env.BASE_URL || 'https://jsonplaceholder.typicode.com',
     });
   }
 
@@ -41,11 +45,10 @@ class ApiService {
   async setAccessToken(token: string | null) {
     this.accessToken = token;
     if (this.accessToken) {
-      this.axiosInstance.defaults.headers.common[
-        "Authorizations"
-      ] = `Bearer ${this.accessToken}`;
+      this.axiosInstance.defaults.headers.common['Authorizations'] =
+        `Bearer ${this.accessToken}`;
     } else {
-      delete this.axiosInstance.defaults.headers.common["Authorizations"];
+      delete this.axiosInstance.defaults.headers.common['Authorizations'];
     }
   }
 
@@ -68,20 +71,19 @@ class ApiService {
         await this.requestWithRetry<T>(() => this.axiosInstance.get(endpoint));
       return response;
     } catch {
-      throw new Error("Something wrong");
+      throw new Error('Something wrong');
     }
   }
 
   /**
    * Post data to API
    * @param {string} endpoint - The endpoint to post data
-   * @param {any} data - The data to post
+   * @param {unknown} data - The data to post
    * @returns {Promise<AxiosResponse<ApiResponse<T>>>} The response from API
    */
   async post<T>(
     endpoint: string,
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    data: any
+    data: unknown
   ): Promise<AxiosResponse<ApiResponse<T>>> {
     try {
       const response: AxiosResponse<ApiResponse<T>> =
@@ -90,20 +92,19 @@ class ApiService {
         );
       return response;
     } catch {
-      throw new Error("Something wrong");
+      throw new Error('Something wrong');
     }
   }
 
   /**
    * Put data to API
    * @param {string} endpoint - The endpoint to put data
-   * @param {any} data - The data to put
+   * @param {unknown} data - The data to put
    * @returns {Promise<AxiosResponse<ApiResponse<T>>>} The response from API
    */
   async put<T>(
     endpoint: string,
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    data: any
+    data: unknown
   ): Promise<AxiosResponse<ApiResponse<T>>> {
     try {
       const response: AxiosResponse<ApiResponse<T>> =
@@ -112,7 +113,7 @@ class ApiService {
         );
       return response;
     } catch {
-      throw new Error("Something wrong");
+      throw new Error('Something wrong');
     }
   }
 
@@ -129,7 +130,7 @@ class ApiService {
         );
       return response;
     } catch {
-      throw new Error("Something wrong");
+      throw new Error('Something wrong');
     }
   }
 
@@ -142,18 +143,13 @@ class ApiService {
     requestFunction: () => Promise<AxiosResponse<ApiResponse<T>>>
   ): Promise<AxiosResponse<ApiResponse<T>>> {
     try {
-      this.setAccessToken(StorageUtil.getLocal("token"));
+      this.setAccessToken(StorageUtil.getLocal('token'));
       const response = await requestFunction();
       return response;
     } catch (err) {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const error = err as AxiosError<any>;
+      const error = err as AxiosError<AxiosResponse<T>>;
       // Check error related to expired token
-      if (
-        error.response &&
-        error.response.status === 401 &&
-        error.response.data.message === "Token expired"
-      ) {
+      if (error.response && error.response.status === 401) {
         // If accessToken is expired, handle refresh token here
         await this.refreshAccessToken();
         // After refresh token successfully, handle calling API agian
@@ -170,13 +166,13 @@ class ApiService {
   private async refreshAccessToken() {
     // Send refresh token request and update new accessToken
     try {
-      const response = await this.axiosInstance.post("/refreshToken", {
+      const response = await this.axiosInstance.post('/refreshToken', {
         refreshToken: this.refreshToken,
       });
       const newAccessToken = response.data.accessToken;
       this.setAccessToken(newAccessToken);
-    } catch (error) {
-      throw new Error("Failed to refresh access token");
+    } catch {
+      throw new Error('Failed to refresh access token');
     }
   }
 }
