@@ -1,4 +1,4 @@
-# <img src="./public/svg/vercel.svg" alt="My Skills" width="30" /> Next.js Template (SA Version)
+# <img src="./public/svg/vercel.svg" alt="My Skills" width="30" /> Next.js Template
 
 [Next.js App router](https://nextjs.org/) boilerplate for a typical project
 
@@ -21,6 +21,20 @@
   </tr>
   <tr style="text-align: center">
     <td>1</td>
+    <td>1.1</td>
+    <td>
+      <a href="https://github.com/lextri980/nextjs-template/tree/dev/version-1.1">
+        dev/version-1.1
+      </a>
+    </td>
+    <td>
+      <a href="https://github.com/lextri980/template_nextjs/blob/dev/version-1.1/READ_UPDATE.md">
+        Go Detail
+      </a>
+    </td>
+  </tr>
+  <tr style="text-align: center">
+    <td>2</td>
     <td>1.0</td>
     <td>
       <a href="https://github.com/lextri980/nextjs-template/tree/dev/version-1.0">
