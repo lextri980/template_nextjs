@@ -18,6 +18,7 @@
     <th>Version</th>
     <th>Branch</th>
     <th>Update information</th>
+    <th>Status</th>
   </tr>
   <tr style="text-align: center">
     <td>1</td>
@@ -32,6 +33,7 @@
         Go Detail
       </a>
     </td>
+    <td>Develop</td>
   </tr>
   <tr style="text-align: center">
     <td>2</td>
@@ -46,6 +48,7 @@
         Go Detail
       </a>
     </td>
+    <td>Release</td>
   </tr>
 </table>
 
