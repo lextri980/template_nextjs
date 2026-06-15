@@ -10,6 +10,8 @@
     "lint": "eslint --max-warnings=0",
     "lint:fix": "eslint --fix --max-warnings=0",
     "type-check": "tsc --noEmit",
+    "lint-staged": "lint-staged",
+    "pre-commit": "pnpm type-check && pnpm lint-staged",
     "prepare": "husky"
   },
   "dependencies": {
@@ -51,8 +53,8 @@
   "lint-staged": {
     "*.{ts,tsx}": [
       "prettier --write",
-      "eslint --fix --max-warnings=0",
-      "git add ."
+      "git add .",
+      "eslint --fix --max-warnings=0"
     ]
   }
 }

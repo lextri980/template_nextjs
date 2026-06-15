@@ -17,13 +17,19 @@
     <th>No.</th>
     <th>Version</th>
     <th>Branch</th>
+    <th>Update information</th>
   </tr>
   <tr style="text-align: center">
     <td>1</td>
     <td>1.0</td>
     <td>
       <a href="https://github.com/lextri980/nextjs-template/tree/dev/version-1.0">
-        dev/tq-version-1.0
+        dev/version-1.0
+      </a>
+    </td>
+    <td>
+      <a href="https://github.com/lextri980/template_nextjs/blob/dev/version-1.0/READ_UPDATE.md">
+        Go Detail
       </a>
     </td>
   </tr>
@@ -61,7 +67,6 @@ Visit [http://localhost:4242](http://localhost:4242) in your browser.
 ## 📁 Project Structure
 
 ```
-.
 ├── public/             # Public section
 │   ├── fonts/          # Local fonts
 │   ├── svg/            # SVG file type

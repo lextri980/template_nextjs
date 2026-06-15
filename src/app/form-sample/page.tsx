@@ -1,5 +1,10 @@
 import FormSampleModule from '@/modules/form-sample';
+import { MainLayout } from '@/components/layouts';
 
 export default function FormSample() {
-  return <FormSampleModule />;
+  return (
+    <MainLayout>
+      <FormSampleModule />
+    </MainLayout>
+  );
 }

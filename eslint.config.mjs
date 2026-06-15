@@ -1,7 +1,8 @@
 import nextVitals from 'eslint-config-next/core-web-vitals';
 import nextTs from 'eslint-config-next/typescript';
-// import eslintPluginTailwindCSS from 'eslint-plugin-tailwindcss';
 import { defineConfig, globalIgnores } from 'eslint/config';
+
+// import eslintPluginTailwindCSS from 'eslint-plugin-tailwindcss';
 
 const eslintConfig = defineConfig([
   ...nextVitals,
@@ -17,10 +18,6 @@ const eslintConfig = defineConfig([
         },
       ],
       'no-console': 'warn',
-      'padding-line-between-statements': [
-        'warn',
-        { blankLine: 'always', prev: '*', next: 'return' },
-      ],
       // 'tailwindcss/classnames-order': 'warn',
     },
     // plugins: {
