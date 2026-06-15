@@ -1,0 +1,15 @@
+@theme {
+  /** Colors */
+  --color-light: var(--color-light);
+  --color-dark: var(--color-dark);
+  --color-primary: var(--color-primary);
+  --color-error: var(--color-error);
+  /** Collapse */
+  --color-collapse-header-border: var(--color-collapse-header-border);
+  --color-collapse-separator-border: var(--color-collapse-separator-border);
+  /** Input */
+  --color-input-border: var(--color-input-border);
+  --color-input-border-hover: var(--color-input-border-hover);
+  --color-input-border-focus: var(--color-input-border-focus);
+  --color-input-background: var(--color-input-background);
+}

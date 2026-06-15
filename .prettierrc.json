@@ -1,0 +1,34 @@
+{
+  "arrowParens": "always",
+  "htmlWhitespaceSensitivity": "ignore",
+  "semi": true,
+  "trailingComma": "es5",
+  "bracketSameLine": true,
+  "bracketSpacing": true,
+  "singleQuote": true,
+  "jsxSingleQuote": true,
+  "importOrder": [
+    "^next$",
+    "^next/",
+    "^react$",
+    "^react/",
+    "^@/modules",
+    "^@/components/layouts",
+    "^@/components/composites",
+    "^@/components/cores",
+    "<BUILTIN_MODULES>",
+    "<THIRD_PARTY_MODULES>",
+    "^[./]",
+    "\\.(css|scss|sass|less)$"
+  ],
+  "importOrderSideEffects": true,
+  "importOrderSeparation": false,
+  "importOrderSortSpecifiers": true,
+  "importOrderCaseInsensitive": true,
+  "importOrderGroupNamespaceSpecifiers": true,
+  "plugins": [
+    "prettier-plugin-tailwindcss",
+    "@trivago/prettier-plugin-sort-imports",
+    "prettier-plugin-merge"
+  ]
+}

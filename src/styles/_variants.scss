@@ -1,0 +1,33 @@
+:root {
+  /* ------------------------ [MODE] Light ------------------------ */
+  &[data-mode='light'] {
+    --background: #faf1e6;
+    --foreground: #151b23;
+    --color-light: #ffffff;
+    --color-dark: #000000;
+    --color-primary: #0d4949;
+    --color-error: #e05454;
+    --color-collapse-header-border: #cecece;
+    --color-collapse-separator-border: #faf1e6;
+    --color-input-border: #0000003b;
+    --color-input-border-hover: #00000057;
+    --color-input-border-focus: #00000093;
+    --color-input-background: #ffffff;
+  }
+
+  /* ------------------------ [MODE] Dark ------------------------ */
+  &[data-mode='dark'] {
+    --background: #181b1fc2;
+    --foreground: #faf5f1;
+    --color-light: #000000;
+    --color-dark: #ffffff;
+    --color-primary: #0d4949;
+    --color-error: #e05454;
+    --color-collapse-header-border: #0f0f0f;
+    --color-collapse-separator-border: #faf5f1;
+    --color-input-border: #0000003b;
+    --color-input-border-hover: #00000057;
+    --color-input-border-focus: #00000093;
+    --color-input-background: #ffffff;
+  }
+}

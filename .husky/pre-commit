@@ -1,0 +1,3 @@
+# cd ./client // Must cd if husky folder is not placed in root git folder
+echo "🔍 Running lint-staged..."
+pnpm pre-commit
