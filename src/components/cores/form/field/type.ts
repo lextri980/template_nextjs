@@ -24,7 +24,21 @@ export type TFieldProps<
   // Whether the field is required
   required?: boolean;
   // Children for Field Component
-  children: React.ReactElement | TRenderFieldFunction<TFieldValues, TName>;
+  // Props passed to a child element when cloning (label, required, plus react-hook-form field helpers and state).
+  children:
+    | React.ReactElement<TFieldChildrenProps<TFieldValues, TName>>
+    | TRenderFieldFunction<TFieldValues, TName>;
+};
+
+export type TFieldChildrenProps<
+  TFieldValues extends FieldValues = FieldValues,
+  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
+> = {
+  label?: string;
+  required?: boolean;
+  field?: ControllerRenderProps<TFieldValues, TName>;
+  fieldState?: ControllerFieldState;
+  formState?: UseFormStateReturn<TFieldValues>;
 };
 
 export type TRenderFieldFunction<

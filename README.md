@@ -84,25 +84,30 @@ Visit [http://localhost:4242](http://localhost:4242) in your browser.
 ## 📁 Project Structure
 
 ```
-├── public/             # Public section
-│   ├── fonts/          # Local fonts
-│   ├── svg/            # SVG file type
-│   └── image/          # Other image file type (.png,.jpg,...)
-├── src/                # Application routes source
-│   ├── apis/           # API hooks using tanstack-query
-│   ├── app/            # Include pages router folder
-│   ├── components/     # Components
-│       ├── core/       # Atom components
-│       ├── layout/     # Components based on many atom components
-│   ├── configs/        # Configs
-│   ├── contexts/       # Contexts
-│   ├── hooks/          # Custom hooks
-│   ├── modules/        # Function module of each page
-│   ├── routers/        # Router constants
-│   ├── styles/         # Global & Specific styles
-│   └── utils/          # Utilities
-├── .env.example        # Environment variable example
-└── eslint.config.mjs   # Eslint config
+├── public/                 # Public section
+│   ├── fonts/              # Local fonts
+│   ├── svg/                # SVG file type
+│   └── image/              # Other image file type (.png,.jpg,...)
+├── src/                    # Application routes source
+│   ├── app/                # Include pages router folder
+│   ├── components/         # Components
+│       ├── composites/     # Components based on many atom components
+│       ├── core/           # Atom components
+│       ├── layout/         # Wrapper layouts
+│   ├── configs/            # Configs
+│   ├── modules/            # Function module of each page
+│       ├── common/         # Components based on many atom components
+│           ├── apis/       # API hooks using tanstack-query
+│           ├── constants/  # Common constants
+│           ├── contexts/   # Context creation
+│           ├── hooks/      # Custom hooks
+│           ├── types/      # Common types
+│           ├── utils/      # Utility functions
+│       ├── ...             # Other modules
+│   ├── routers/            # Router constants
+│   └── styles/             # Global & Specific styles
+├── .env.example            # Environment variable example
+└── eslint.config.mjs       # Eslint config
 ```
 
 ## 📦 Deployment
