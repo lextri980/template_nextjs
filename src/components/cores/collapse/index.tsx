@@ -3,7 +3,7 @@ import { ChevronDown } from '@untitledui/icons';
 import clsx from 'clsx';
 import { TCollapseProps } from './type';
 
-export default function Collapse(props: TCollapseProps) {
+export function Collapse(props: TCollapseProps) {
   const {
     items,
     uppercaseTitle = false,

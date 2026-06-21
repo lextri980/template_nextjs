@@ -1,2 +1,2 @@
-export { default as Field } from './field';
-export { default as Textfield } from './textfield';
+export * from './field';
+export * from './textfield';

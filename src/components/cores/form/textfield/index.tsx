@@ -3,11 +3,11 @@ import { useCallback, useState } from 'react';
 import { InputGroup } from '@heroui/react';
 import { Eye, EyeOff } from '@untitledui/icons';
 import clsx from 'clsx';
-import Label from '../../label';
+import { Label } from '../../label';
 import { TEXTFIELD_TYPE } from './constant';
 import { TTextfieldProps, TTextfieldType } from './type';
 
-export default function Textfield(props: TTextfieldProps) {
+export function Textfield(props: TTextfieldProps) {
   const {
     error,
     field,
