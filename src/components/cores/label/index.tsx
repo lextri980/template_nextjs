@@ -1,7 +1,7 @@
 import { clsx } from 'clsx';
 import type { TLabelProps } from './type';
 
-export default function Label(props: TLabelProps) {
+export function Label(props: TLabelProps) {
   const { className = '', error, required = false, children } = props;
 
   return (

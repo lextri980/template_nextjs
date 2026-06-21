@@ -1,1 +1,1 @@
-export { default as TextfieldCollapseContent } from './textfield-collapse-content';
+export * from './textfield-collapse-content';

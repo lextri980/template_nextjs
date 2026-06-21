@@ -12,7 +12,7 @@ import {
 } from '@untitledui/icons';
 import { TextfieldCollapseContent } from './components';
 
-export default function FormSampleModule() {
+export function FormSampleModule() {
   const items = useMemo(
     () => [
       {

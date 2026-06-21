@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 
-export default function useRenderCounter() {
+export function useRenderCounter() {
   const refs = React.useRef(0);
   refs.current += 1;
 

@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import { TTextfieldCollapseForm } from '../../types';
 import { TEXTFIELD_COLLAPSE_FORM_DEFAULT_VALUE } from './constant';
 
-export default function TextfieldCollapseContent() {
+export function TextfieldCollapseContent() {
   const { control } = useForm<TTextfieldCollapseForm>({
     defaultValues: TEXTFIELD_COLLAPSE_FORM_DEFAULT_VALUE,
   });

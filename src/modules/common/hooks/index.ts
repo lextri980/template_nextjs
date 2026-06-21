@@ -1,1 +1,2 @@
-export { default as useRenderCounter } from './use-render-counter';
+export * from './use-color-variant';
+export * from './use-render-counter';
