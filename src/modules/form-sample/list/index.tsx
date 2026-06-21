@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { Collapse } from '@/components/cores';
+import { Collapse } from '@/components/core';
 import {
   BoldSquare,
   CalendarDate,
