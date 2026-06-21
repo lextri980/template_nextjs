@@ -22,6 +22,21 @@
   </tr>
   <tr style="text-align: center">
     <td>1</td>
+    <td>1.2</td>
+    <td>
+      <a href="https://github.com/lextri980/nextjs-template/tree/dev/version-1.2">
+        dev/version-1.2
+      </a>
+    </td>
+    <td>
+      <a href="https://github.com/lextri980/template_nextjs/blob/dev/version-1.2/READ_UPDATE.md">
+        Go Detail
+      </a>
+    </td>
+    <td>Develop</td>
+  </tr>
+  <tr style="text-align: center">
+    <td>1</td>
     <td>1.1</td>
     <td>
       <a href="https://github.com/lextri980/nextjs-template/tree/dev/version-1.1">
@@ -33,7 +48,7 @@
         Go Detail
       </a>
     </td>
-    <td>Develop</td>
+    <td>Release</td>
   </tr>
   <tr style="text-align: center">
     <td>2</td>

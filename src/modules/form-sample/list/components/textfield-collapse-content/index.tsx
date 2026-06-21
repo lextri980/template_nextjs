@@ -1,5 +1,5 @@
 'use client';
-import { Field, Textfield } from '@/components/cores';
+import { Field, Textfield } from '@/components/core';
 import { useForm } from 'react-hook-form';
 import { TTextfieldCollapseForm } from '../../types';
 import { TEXTFIELD_COLLAPSE_FORM_DEFAULT_VALUE } from './constant';
