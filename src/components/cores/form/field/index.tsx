@@ -1,7 +1,6 @@
 'use client';
 import React from 'react';
-import { Controller } from 'react-hook-form';
-import type { FieldPath, FieldValues } from 'react-hook-form';
+import { Controller, FieldPath, FieldValues } from 'react-hook-form';
 import { TFieldProps } from './type';
 
 export default function Field<
@@ -24,7 +23,7 @@ export default function Field<
                   label,
                   field,
                   required,
-                } as Record<string, unknown>)
+                })
               : null}
         </>
       )}

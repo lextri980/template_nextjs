@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import { Collapse } from '@/components/cores';
 import {
+  BoldSquare,
   CalendarDate,
   CalendarMinus01,
   CheckCircle,
@@ -14,6 +15,11 @@ import { TextfieldCollapseContent } from './components';
 export default function FormSampleModule() {
   const items = useMemo(
     () => [
+      {
+        title: 'Button',
+        content: <></>,
+        icon: BoldSquare,
+      },
       {
         title: 'Textfield',
         content: <TextfieldCollapseContent />,

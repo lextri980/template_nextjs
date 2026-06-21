@@ -18,20 +18,14 @@ const eslintConfig = defineConfig([
         },
       ],
       'no-console': 'warn',
+      'react-hooks/refs': 'off',
       // 'tailwindcss/classnames-order': 'warn',
     },
     // plugins: {
     //   tailwindcss: eslintPluginTailwindCSS,
     // },
   },
-  // Override default ignores of eslint-config-next.
-  globalIgnores([
-    // Default ignores of eslint-config-next:
-    '.next/**',
-    'out/**',
-    'build/**',
-    'next-env.d.ts',
-  ]),
+  globalIgnores(['.next/**', 'out/**', 'build/**', 'next-env.d.ts']),
 ]);
 
 export default eslintConfig;
